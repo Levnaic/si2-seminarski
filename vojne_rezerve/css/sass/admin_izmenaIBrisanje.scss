@@ -1,0 +1,17 @@
+@import './variables';
+@import './universal';
+@import './nav';
+@import './footer';
+@import './admin_nav';
+@import './prikazTabela';
+
+.izmenaBtn {
+  border-radius: 0 !important;
+  // margin: 17px;
+}
+
+.filterForma {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

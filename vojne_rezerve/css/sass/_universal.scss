@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  background-color: $background;
+}
+
+section,
+footer {
+  padding: 0 10%;
+}
+
+h1 {
+  text-align: center;
+  font-size: $headline;
+  color: $highliteText;
+}
+
+h2 {
+  font-size: $secondaryHeadline;
+  color: $highliteText;
+}
+
+p,
+li,
+label {
+  font-size: $text;
+  color: $textColor;
+}
+
+a {
+  font-size: $text;
+  color: $highliteText;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: $highliteText;
+  color: $navTextColor !important;
+  width: 120px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover {
+    // background-color: $navTextColor !important;
+    background-color: $background;
+    color: $highliteText !important;
+    border: 3px solid $highliteText;
+  }
+  &:active {
+    transform: scale(0.94);
+  }
+}

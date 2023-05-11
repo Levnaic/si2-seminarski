@@ -1,0 +1,27 @@
+nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .navRight {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navLinks {
+    width: 90%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+  }
+
+  p {
+    color: $navTextColor;
+  }
+
+  .nepromenjeni {
+    cursor: default;
+    &:hover {
+      color: $navTextColor;
+    }
+  }
+}

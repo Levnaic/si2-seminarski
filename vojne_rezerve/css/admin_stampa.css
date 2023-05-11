@@ -1,0 +1,95 @@
+/*
+$primaryColor: #027f00;
+$secondaryColor: #013300;
+$textColor: #ffffff;
+$secondaryText: #82ff7f;
+*/
+body {
+  margin: 0;
+  background-color: #f8f8f8;
+}
+
+section,
+footer {
+  padding: 0 10%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 54px;
+  color: #a22720;
+}
+
+h2 {
+  font-size: 36px;
+  color: #a22720;
+}
+
+p,
+li,
+label {
+  font-size: 18px;
+  color: #333333;
+}
+
+a {
+  font-size: 18px;
+  color: #a22720;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #a22720;
+  color: #c1c1c1 !important;
+  width: 120px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #f8f8f8;
+  color: #a22720 !important;
+  border: 3px solid #a22720;
+}
+.btn:active {
+  transform: scale(0.94);
+}
+
+.tableContianer {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  text-align: center;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+th {
+  background-color: #202020;
+  color: #c1c1c1;
+  text-align: center;
+  height: 40px;
+}
+
+td {
+  padding: 17px;
+}
+
+tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+  border-bottom: 2px solid #202020;
+}/*# sourceMappingURL=admin_stampa.css.map */

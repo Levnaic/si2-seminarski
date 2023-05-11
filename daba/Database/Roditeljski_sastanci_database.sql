@@ -1,0 +1,88 @@
+CREATE DATABASE `RODITELJSKI_SASTANCI` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE TABLE `RODITELJSKI_SASTANCI`.`RODITELJ`
+(
+	IdRoditelja int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	ImeRoditelja varchar(30) NOT NULL,
+	PrezimeRoditelja varchar(30) NOT NULL,
+	Adresa varchar(30) NOT NULL,
+	Mesto varchar(30) NOT NULL,
+	IdUcenika int NOT NULL
+);
+
+CREATE TABLE `RODITELJSKI_SASTANCI`.`UCENIK`
+(
+	IdUcenika int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	ImeUcenika varchar(30) NOT NULL,
+	PrezimeUcenika varchar(30) NOT NULL,
+	JMBG char(13) NOT NULL,
+	Adresa varchar(30) NOT NULL,
+	Mesto varchar(30) NOT NULL,
+	IdRazreda int NOT NULL
+);
+
+
+CREATE TABLE `RODITELJSKI_SASTANCI`.`RAZRED`
+(
+	IdRazreda int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	Razred int NOT NULL,
+	Broj int NOT NULL
+);
+
+CREATE TABLE `RODITELJSKI_SASTANCI`.`RAZREDNI_STARESINA`
+(
+	IdRazrednog int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	ImeRazrednog varchar(30) NOT NULL,
+	PrezimeRazrednog varchar(30) NOT NULL,
+	JMBG char(13) NOT NULL,
+	Adresa varchar(30) NOT NULL,
+	Mesto varchar(30) NOT NULL,
+	IdRazreda int NOT NULL
+);
+
+CREATE TABLE `RODITELJSKI_SASTANCI`.`RASPORED_RODITELJSKIH_SASTANKA`
+(
+	IdRasporeda int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	Datum Date,
+	IdRazreda int NOT NULL
+);
+
+
+CREATE TABLE `RODITELJSKI_SASTANCI`.`KORISNIK`
+(
+	IdKorisnika int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	ImeKorisnika varchar(40) NOT NULL,
+	PrezimeKorisnika varchar(40) NOT NULL,
+	EMailKorisnika varchar(40) NOT NULL,
+	Sifra varchar(50) NOT NULL,
+	Uloga varchar(30) NOT NULL
+);
+
+ALTER TABLE `RODITELJSKI_SASTANCI`.`RODITELJ` ADD CONSTRAINT FK_DETE FOREIGN KEY (IdUcenika) 
+REFERENCES `RODITELJSKI_SASTANCI`.`UCENIK` (IdUcenika) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE `RODITELJSKI_SASTANCI`.`UCENIK` ADD CONSTRAINT FK_RAZRED FOREIGN KEY (IdRazreda) 
+REFERENCES `RODITELJSKI_SASTANCI`.`RAZRED` (IdRazreda) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE `RODITELJSKI_SASTANCI`.`RASPORED_RODITELJSKIH_SASTANKA` ADD CONSTRAINT FK_RAS FOREIGN KEY (IdRazreda) 
+REFERENCES `RODITELJSKI_SASTANCI`.`RAZRED` (IdRazreda) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE `RODITELJSKI_SASTANCI`.`RAZREDNI_STARESINA` ADD CONSTRAINT FK_RAZREDD FOREIGN KEY (IdRazreda) 
+REFERENCES `RODITELJSKI_SASTANCI`.`RAZRED` (IdRazreda) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+INSERT INTO `RODITELJSKI_SASTANCI`.`RAZRED` (`IdRazreda`, `Razred`, `Broj`) VALUES ('1', '1', '1');
+INSERT INTO `RODITELJSKI_SASTANCI`.`RAZRED` (`IdRazreda`, `Razred`, `Broj`) VALUES ('2', '1', '2');
+INSERT INTO `RODITELJSKI_SASTANCI`.`RAZRED` (`IdRazreda`, `Razred`, `Broj`) VALUES ('3', '2', '1');
+INSERT INTO `RODITELJSKI_SASTANCI`.`RAZRED` (`IdRazreda`, `Razred`, `Broj`) VALUES ('4', '3', '2');
+
+INSERT INTO `RODITELJSKI_SASTANCI`.`RAZREDNI_STARESINA` (`IdRazrednog`, `ImeRazrednog`, `PrezimeRazrednog`, `JMBG`, `Adresa`, `Mesto`, `IdRazreda`) VALUES ('1', 'Milos', 'Milakovic', '1308999855203', 'JNA 2', 'Čurug', '1');
+INSERT INTO `RODITELJSKI_SASTANCI`.`RAZREDNI_STARESINA` (`IdRazrednog`, `ImeRazrednog`, `PrezimeRazrednog`, `JMBG`, `Adresa`, `Mesto`, `IdRazreda`) VALUES ('2', 'Vesna', 'Mišić', '0206976860123', 'KLM 3', 'Beograd', '2');
+INSERT INTO `RODITELJSKI_SASTANCI`.`RAZREDNI_STARESINA` (`IdRazrednog`, `ImeRazrednog`, `PrezimeRazrednog`, `JMBG`, `Adresa`, `Mesto`, `IdRazreda`) VALUES ('3', 'Svetlana', 'Tomić', '1908965850206', 'Žarka Zrenjanina 2 ', 'Zrenjanin', '4');
+
+
+
+INSERT INTO `RODITELJSKI_SASTANCI`.`KORISNIK` (ImeKorisnika, PrezimeKorisnika, EMailKorisnika, Sifra, Uloga) VALUES ('Dalibor', 'Seljmesi', 'd@gmail.com', 'ccd95884370d1eda42c73f6a8ef95d33', 'admin');
+--NA LINIJI ISPOD VIDI ERROR SA STRANIM KLJUCEM
+INSERT INTO `RODITELJSKI_SASTANCI`.`RODITELJ` (`IdRoditelja`, `ImeRoditelja`, `PrezimeRoditelja`, `Adresa`, `Mesto`, `IdUcenika`) VALUES ('3', 'Dalibor', 'Seljmesi', '5.Oktobar 2', 'Novi Bečej', '14');
+INSERT INTO `RODITELJSKI_SASTANCI`.`RASPORED_RODITELJSKIH_SASTANKA` (`IdRasporeda`, `Datum`, `IdRazreda`) VALUES ('1', '2022-04-12', '1');
+INSERT INTO `RODITELJSKI_SASTANCI`.`UCENIK` (`IdUcenika`, `ImeUcenika`, `PrezimeUcenika`, `JMBG`, `Adresa`, `Mesto`, `IdRazreda`) VALUES ('1', 'Mirko', 'Seljmesi', '1308999855203', '5.Oktobar 2', 'Novi Bečej', '1');

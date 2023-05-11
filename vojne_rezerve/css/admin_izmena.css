@@ -1,0 +1,112 @@
+/*
+$primaryColor: #027f00;
+$secondaryColor: #013300;
+$textColor: #ffffff;
+$secondaryText: #82ff7f;
+*/
+body {
+  margin: 0;
+  background-color: #f8f8f8;
+}
+
+section,
+footer {
+  padding: 0 10%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 54px;
+  color: #a22720;
+}
+
+h2 {
+  font-size: 36px;
+  color: #a22720;
+}
+
+p,
+li,
+label {
+  font-size: 18px;
+  color: #333333;
+}
+
+a {
+  font-size: 18px;
+  color: #a22720;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #a22720;
+  color: #c1c1c1 !important;
+  width: 120px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #f8f8f8;
+  color: #a22720 !important;
+  border: 3px solid #a22720;
+}
+.btn:active {
+  transform: scale(0.94);
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 120px 0;
+  border: 1px solid black;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 60px;
+  background-color: #202020;
+}
+form .formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+form .formSection input,
+form .formSection select {
+  width: 250px;
+  height: 35px;
+  border-radius: 15px;
+  padding: 0 10px;
+  border: none;
+  color: #202020;
+}
+form .formSection label {
+  padding-left: 15px;
+  color: #c1c1c1;
+}
+form .formSection .btn {
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+}
+form .formSectionCheckbox {
+  display: flex;
+  gap: 70px;
+}
+form .checkboxSection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form .checkboxSection label {
+  color: #c1c1c1;
+}/*# sourceMappingURL=admin_izmena.css.map */

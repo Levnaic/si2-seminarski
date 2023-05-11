@@ -1,0 +1,35 @@
+footer {
+  background-color: $secondaryColor;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  text-align: center;
+  margin-top: 150px;
+  p {
+    color: $secondaryText;
+  }
+
+  .footerUp {
+    min-height: 220px;
+    display: flex;
+    > * {
+      width: 50%;
+    }
+    a {
+      color: $navTextColor;
+      width: fit-content;
+      height: fit-content;
+      &:hover {
+        color: $secondaryText;
+      }
+    }
+    .footerLeft {
+      display: flex;
+      justify-content: start;
+    }
+    .footerRight {
+      display: flex;
+      justify-content: end;
+      gap: 40px;
+    }
+  }
+}

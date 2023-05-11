@@ -1,0 +1,96 @@
+nav {
+  background-color: #202020;
+  padding: 0 10%;
+  display: flex;
+  font-size: 20px;
+  .navLeft {
+    width: 30%;
+  }
+
+  .navRight {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+  }
+
+  img {
+    width: 180px;
+    height: 90px;
+    margin: 10px 0;
+  }
+
+  a,
+  p {
+    text-decoration: none;
+    color: $navTextColor;
+    &:hover {
+      color: $secondaryText;
+    }
+  }
+
+  p {
+    cursor: pointer;
+  }
+
+  .active {
+    font-weight: 700;
+  }
+
+  .loginBtn {
+    background-color: $highliteText;
+    color: $navTextColor;
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $background;
+      color: $highliteText;
+      border: 3px solid $highliteText;
+    }
+  }
+
+  .loginBtn:active {
+    transform: scale(0.94);
+  }
+}
+
+.prikaz {
+  position: relative;
+}
+
+.padajuci {
+  visibility: hidden;
+
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  a {
+    text-align: center;
+    background-color: $secondaryText;
+    padding: 5px;
+    &:hover {
+      background-color: $secondaryTextH;
+    }
+  }
+}
+
+.sticky {
+  position: fixed;
+  display: flex;
+  opacity: 0.9;
+  width: 100%;
+}
+
+.vidljiv {
+  visibility: visible;
+}
+
+.nevidljiv {
+  visibility: hidden;
+}
